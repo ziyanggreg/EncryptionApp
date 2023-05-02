@@ -23,6 +23,3 @@ Click the 'Encrypt file' or 'Decrypt file' button to encrypt or decrypt the sele
 Dependencies: 
 tkinter
 Crypto
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
