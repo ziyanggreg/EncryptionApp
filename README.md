@@ -16,10 +16,10 @@ Install the required dependencies listed in the 'requirements.txt' file using 'p
 Run the program by executing the 'encryption_app.py' file.
 
 Usage: 
-Click the 'Select target file(s)' button to choose a file or files to encrypt or decrypt.
-Enter a key in the 'Enter encryption key' field.
-Select an encryption algorithm from the drop-down menu. The application supports three encryption algorithms: AES, ARC4, and DES3.
-Click the 'Encrypt file' or 'Decrypt file' button to encrypt or decrypt the selected file(s).
+1. Click the 'Select target file(s)' button to choose a file or files to encrypt or decrypt.
+2. Enter a key in the 'Enter encryption key' field.
+3. Select an encryption algorithm from the drop-down menu. The application supports three encryption algorithms: AES, ARC4, and DES3.
+4.Click the 'Encrypt file' or 'Decrypt file' button to encrypt or decrypt the selected file(s).
 
 Dependencies: 
 tkinter
