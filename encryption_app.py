@@ -89,32 +89,59 @@ def show_instructions():
 
 NOTE: Make sure to remember the encryption key as it will be required to decrypt the file later."""
 
-    # create a new window to display the instructions
+    # Window to display the instructions
     window = tk.Toplevel()
     window.title("Instructions")
     window.geometry("400x400")
 
-    # create a ScrolledText widget to display the instructions
+    # ScrolledText widget to display the instructions
     text_box = ScrolledText(window, wrap=tk.WORD, width=50, height=20, font=("Arial", 12))
     text_box.pack(expand=True, fill="both")
     text_box.insert(tk.END, instructions)
     text_box.configure(state="disabled") # disable editing
 
+def show_about():
+    about_text = """Greg's Encryption Application
+
+Version 0.1
+
+Author: Greg Zhang
+Author Email: ziyangz@csu.fullerton.edu
+
+This application allows you to encrypt and decrypt files using AES encryption. Simply select a file, enter an encryption key, and click the 'Encrypt file' or 'Decrypt file' button to perform the operation.
+
+Enjoy!"""
+
+    # create a new window to display the about information
+    window = tk.Toplevel()
+    window.title("About")
+    window.geometry("400x400")
+
+    # create a ScrolledText widget to display the information
+    text_box = ScrolledText(window, wrap=tk.WORD, width=50, height=20, font=("Arial", 12))
+    text_box.pack(expand=True, fill="both")
+    text_box.insert(tk.END, about_text)
+    text_box.configure(state="disabled") # disable editing
+
 # Button to select the file to encrypt
 select_file_button = tk.Button(root, text="Select target file", command=select_file, font=("Arial", 12))
-select_file_button.pack(pady=10)
+select_file_button.pack(pady=20)
 
 # Button to encrypt the selected file
 encrypt_button = tk.Button(root, text="Encrypt file", command=encrypt_file, font=("Arial", 12), bg="red", padx=20, pady=10)
-encrypt_button.pack(pady=10)
+encrypt_button.pack(pady=20)
 
 # Button to decrypt the selected file
 decrypt_button = tk.Button(root, text="Decrypt file", command=decrypt_file, font=("Arial", 12), bg="green", padx=20, pady=10)
-decrypt_button.pack(pady=10)
+decrypt_button.pack(pady=20)
 
 # Button to show instructions
 instructions_button = tk.Button(root, text="Instructions", command=show_instructions)
-instructions_button.pack()
+instructions_button.pack(side="left", anchor="sw", padx=10, pady=10)
+
+# Button to show about information
+about_button = tk.Button(root, text="About", command=show_about)
+about_button.pack(side="right", anchor="se", padx=10, pady=10)
 
 def encrypt_file_with_key(key, filename):
     chunk_size = 64 * 1024
