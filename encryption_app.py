@@ -1,3 +1,29 @@
+"""
+Greg's Encryption Application
+
+This is a simple file encryption application that uses the AES encryption algorithm with a 256-bit key. The user selects a file to encrypt or decrypt, enters an encryption key, and then clicks the appropriate button to perform the operation.
+
+The application uses the following modules:
+tkinter: for the graphical user interface
+filedialog: for selecting the file to encrypt/decrypt
+messagebox: for displaying error messages and success messages
+ScrolledText: for displaying instructions in a separate window
+Crypto.Cipher: for the AES encryption/decryption
+Crypto.Hash: for hashing the encryption key
+os: for getting file size and generating random initialization vectors
+
+Instructions:
+Click the 'Select target file' button to choose a file to encrypt or decrypt.
+Enter a key in the 'Enter encryption key' field.
+Click the 'Encrypt file' or 'Decrypt file' button to encrypt or decrypt the selected file.
+Note: Make sure to remember the encryption key as it will be required to decrypt the file later.
+
+Author: Greg Zhang
+Author email: ziyangz@csu.fullerton.edu
+Date created: 2022-04-25
+Last modified: 2022-05-01
+"""
+
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from tkinter.scrolledtext import ScrolledText
