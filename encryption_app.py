@@ -1,8 +1,6 @@
 """
 Greg's Encryption Application
-
 This is a simple file encryption application that allows the user to select a file to encrypt or decrypt, and uses the AES, ARC4, or DES3 encryption algorithms with a 256-bit key.
-
 The application uses the following modules:
 tkinter: for the graphical user interface
 filedialog: for selecting the file to encrypt/decrypt
@@ -11,7 +9,6 @@ ScrolledText: for displaying instructions and about information in a separate wi
 Crypto.Cipher: for the encryption/decryption algorithms (AES, ARC4, and DES3)
 Crypto.Hash: for hashing the encryption key
 os: for getting file size and generating random initialization vectors
-
 Author: Greg Zhang
 Author email: ziyangz@csu.fullerton.edu
 Date created: 2022-04-25
@@ -108,10 +105,12 @@ def decrypt_file():
 
 def show_instructions():
     instructions = """INSTRUCTIONS:
-
 1. Click the 'Select target file' button to choose a file to encrypt or decrypt.
+
 2. Enter a key in the 'Enter encryption key' field.
+
 3. Select an encryption algorithm from the drop-down menu. The application supports three encryption algorithms: AES, ARC4, and DES3.
+
 4. Click the 'Encrypt file' or 'Decrypt file' button to encrypt or decrypt the selected file.
 
 NOTE: Make sure to remember the encryption key and algorithm as they will be required to decrypt the file(s) later."""
@@ -130,9 +129,7 @@ NOTE: Make sure to remember the encryption key and algorithm as they will be req
 
 def show_about():
     about_text = """Greg's Encryption Application
-
 Version 0.1
-
 Author: Greg Zhang
 Author Email: ziyangz@csu.fullerton.edu
 
@@ -146,10 +143,9 @@ ARC4 is a symmetric stream cipher encryption algorithm that was designed by Ron 
 
 DES3, also known as Triple DES, is an improvement on the original DES (Data Encryption Standard) algorithm that uses three 56-bit keys to provide a higher level of security. However, it is still not recommended for use in new applications due to its relatively slow speed and susceptibility to attacks.
 
-SHA256 is used in this application to generate a secure key from the user-entered encryption key. 
-When the user enters an encryption key, it is first padded to a length of 24 bytes using the 'ljust()' method. 
-The resulting padded key is then passed to the SHA256 hash function, which generates a 256-bit hash value that is used as the actual encryption key. 
-This process of hashing the user-entered key ensures that the key is secure and cannot be easily guessed or cracked by attackers. 
+SHA256 is used in this application to generate a secure key from the user-entered encryption key.
+When the user enters an encryption key, it is first padded to a length of 24 bytes using the 'ljust()' method. The resulting padded key is then passed to the SHA256 hash function, which generates a 256-bit hash value that is used as the actual encryption key.
+This process of hashing the user-entered key ensures that the key is secure and cannot be easily guessed or cracked by attackers.
 
 Please email any comments or questions."""
 
