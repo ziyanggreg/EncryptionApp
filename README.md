@@ -19,7 +19,7 @@ Usage:
 1. Click the 'Select target file(s)' button to choose a file or files to encrypt or decrypt.
 2. Enter a key in the 'Enter encryption key' field.
 3. Select an encryption algorithm from the drop-down menu. The application supports three encryption algorithms: AES, ARC4, and DES3.
-4.Click the 'Encrypt file' or 'Decrypt file' button to encrypt or decrypt the selected file(s).
+4. Click the 'Encrypt file' or 'Decrypt file' button to encrypt or decrypt the selected file(s).
 
 Dependencies: 
 tkinter
