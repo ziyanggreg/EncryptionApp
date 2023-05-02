@@ -221,7 +221,7 @@ def decrypt_file_with_key(key, filename, algorithm):
 
     with open(filename, 'rb') as infile:
         filesize = int(infile.read(16))
-        iv = infile.read(16)
+        iv = infile.read(8) if algorithm == "DES3" else infile.read(16)
 
         if algorithm == "AES":
             decryptor = AES.new(key, AES.MODE_CBC, iv)
