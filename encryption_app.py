@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from Crypto.Cipher import AES
+from Crypto.Hash import SHA256
 import os
 
 root = tk.Tk()
@@ -15,6 +16,9 @@ filename_label.pack()
 key_entry = tk.Entry(root)
 key_entry.pack()
 
+# Global variable to hold the encryption key
+key = ""
+
 def select_file():
     global filename
     filename = filedialog.askopenfilename()
@@ -22,16 +26,24 @@ def select_file():
 
 def encrypt_file():
     try:
-        key = key_entry.get().encode('utf-8')
-        encrypt_file_with_key(key, filename)
+        key = key_entry.get()
+        if not key:
+            raise ValueError("Encryption key cannot be empty or null")
+        key_bytes = bytes(key, 'utf-8')
+        key_hash = SHA256.new(key_bytes).digest()[:32]
+        encrypt_file_with_key(key_hash, filename)
         messagebox.showinfo("Encryption successful", "File encrypted successfully!")
     except Exception as e:
         messagebox.showerror("Error", str(e))
 
 def decrypt_file():
     try:
-        key = key_entry.get().encode('utf-8')
-        decrypt_file_with_key(key, filename)
+        key = key_entry.get()
+        if not key:
+            raise ValueError("Decryption key cannot be empty or null")
+        key_bytes = bytes(key, 'utf-8')
+        key_hash = SHA256.new(key_bytes).digest()[:32]
+        decrypt_file_with_key(key_hash, filename)
         messagebox.showinfo("Decryption successful", "File decrypted successfully!")
     except Exception as e:
         messagebox.showerror("Error", str(e))
