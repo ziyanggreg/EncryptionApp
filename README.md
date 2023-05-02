@@ -1,5 +1,7 @@
 # Greg's Encryption Application
+
 CPSC 440 Project
+
 Greg's Encryption Application is a Python-based desktop application that allows users to encrypt and decrypt files using the AES encryption algorithm.
 
 Features
