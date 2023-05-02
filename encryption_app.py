@@ -146,6 +146,11 @@ ARC4 is a symmetric stream cipher encryption algorithm that was designed by Ron 
 
 DES3, also known as Triple DES, is an improvement on the original DES (Data Encryption Standard) algorithm that uses three 56-bit keys to provide a higher level of security. However, it is still not recommended for use in new applications due to its relatively slow speed and susceptibility to attacks.
 
+SHA256 is used in this application to generate a secure key from the user-entered encryption key. 
+When the user enters an encryption key, it is first padded to a length of 24 bytes using the 'ljust()' method. 
+The resulting padded key is then passed to the SHA256 hash function, which generates a 256-bit hash value that is used as the actual encryption key. 
+This process of hashing the user-entered key ensures that the key is secure and cannot be easily guessed or cracked by attackers. 
+
 Please email any comments or questions."""
 
     # create a new window to display the about information
